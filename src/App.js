@@ -27,7 +27,7 @@ import Mail from './pages/mail/mail'
 import PickUpSchedule from './pages/admin/PickUpSchedule';
 import MeetList from './pages/admin/PickUpSchedule';
 import DonationForm from './pages/donation/donation_page';
-import VerifyOtpAndResetPassword from './pages/login/verfifyotp';
+import VerifyOtpAndResetPassword from './pages/login/verifyotp';
 import UpdateApplication from './pages/application/UpdateApplication';
 
 
