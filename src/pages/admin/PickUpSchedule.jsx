@@ -26,7 +26,7 @@ const MeetList = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 bg-white">
-      <h1 className="text-2xl font-bold mb-6 text-[#8B4513]">Scheduled Pickups</h1>
+      <h1 className="text-2xl font-bold mb-6 text-[#000]">Scheduled Pickups</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {meets.map(meet => (
           <div key={meet._id} className="bg-[#F5E6D3] rounded-lg shadow-md overflow-hidden max-w-[300px]">

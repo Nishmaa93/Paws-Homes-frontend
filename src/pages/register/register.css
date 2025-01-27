@@ -1,4 +1,4 @@
-.wrapper.register {
+/* .wrapper.register {
     position: relative;
     width: 420px;
     height: 550px;
@@ -91,4 +91,96 @@
   
   .register-link p a:hover {
     text-decoration: underline;
-  }
+  } */
+
+  .wrapper.register {
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.register-body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../../assets/Website.png') no-repeat center center;
+    background-size: cover;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: auto;
+}
+form h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+form .input-box.register {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 40px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    font-size: 16px;
+    color: #4a4a4a;
+    background-color: #f9f9f9;
+}
+
+.input-box input::placeholder {
+    color: #695141;
+    opacity: 0.7;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #E0D082;
+    color: #000;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #003f8a;
+}
+
+form .register-link {
+    margin-top: 20px;
+    color: #4a4a4a;
+    font-size: 14px;
+}
+
+.register-link p a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}

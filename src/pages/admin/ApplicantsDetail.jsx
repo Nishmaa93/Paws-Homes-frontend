@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import officiallogo from '../../assets/officiallogo.png';
+import officiallogo from '../../assets/logo1-removebg-preview.png';
 import dog from "../../assets/dog.png";
 import { useParams } from 'react-router-dom';
 import { getSingleApplicationApi, updateApplicationApi } from '../../apis/Api';
@@ -76,7 +76,7 @@ const ApplicationDetails = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <img src={officiallogo} alt="Logo" className="h-8 w-auto mr-3" />
-              <span className="text-xl font-bold text-brown-100">AdoptAPet</span>
+              <span className="text-xl font-bold text-brown-100">Paws&Homes</span>
             </div>
           </div>
         </div>

@@ -1,0 +1,53 @@
+/* General styling for the page */
+body {
+    background-color: #E0D082;
+    color: black;
+  }
+  
+  /* Pet details container */
+  .petdetails-body {
+    background-color: #E0D082;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .max-w-4xl {
+    background-color: white; /* White background for the details container */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Add padding inside the container */
+  }
+  
+  /* Adjust the image placement */
+  .md\:w-1\/2 img {
+    border-radius: 12px;
+    margin-top: 10px; /* Add some space above the image */
+    margin-bottom: 10px; /* Add some space below the image */
+    object-fit: contain; /* Ensure the entire image fits without cropping */
+    height: auto; /* Maintain the aspect ratio */
+    max-height: 300px; /* Adjust height for consistent display */
+    width: 100%; /* Ensure the image fills the container width */
+  }
+  
+  /* Buttons */
+  .btn-custom {
+    background-color: #E0D082;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-custom:hover {
+    background-color: #d4c074;
+    color: white;
+  }
+  
+  /* Icon styles */
+  .flex .text-black {
+    color: black;
+  }
+  

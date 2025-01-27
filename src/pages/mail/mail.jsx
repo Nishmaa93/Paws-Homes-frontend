@@ -115,7 +115,7 @@ const Mail = () => {
       <Navbar />
       <div className="container mx-auto p-4 pt-24">
         <div className="bg-brown-200 rounded-lg p-8 max-w-2xl mx-auto mt-8">
-          <h1 className="text-3xl font-bold text-center text-brown-800 mb-8">My Inbox</h1>
+          <h1 className="text-3xl font-bold text-center text-black-800 mb-8">My Inbox</h1>
           {renderContent()}
         </div>
       </div>

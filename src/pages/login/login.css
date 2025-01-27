@@ -1,4 +1,4 @@
-.wrapper{
+/* .wrapper{
     position: relative;
     width: 420px;
     height: 450px;
@@ -16,7 +16,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('../../assets/loginbg.png');
+    background: url('../../assets/Website.png') no-repeat center center;
     background-size: cover;
   }
 
@@ -121,4 +121,143 @@ form .register-link{
 
 .register-link p a:hover{
     text-decoration: underline;
+} */
+
+
+.wrapper {
+    width: 450px;
+    /* Increased the container size slightly */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 40px 30px;
+    /* Adjusted padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+.login-body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../../assets/Website.png') no-repeat center center;
+    background-size: cover;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: auto;
+}
+
+form h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+form .input-box.login {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 40px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    font-size: 16px;
+    color: #4a4a4a;
+    background-color: #f9f9f9;
+}
+
+.input-box input::placeholder {
+    color: #695141;
+    opacity: 0.7;
+    padding-left: 20px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+
+form .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    /* Align "Remember me" and "Forgot password" side by side */
+    align-items: center;
+    color: #4a4a4a;
+    font-size: 14px;
+}
+
+.remember-forgot label input {
+    margin-right: 10px;
+    accent-color: #0056b3;
+    /* Checkbox color */
+}
+
+.remember-forgot a {
+    color: #000000;
+    text-decoration: none;
+
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #E0D082;
+    color: #000;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #E0D082;
+}
+
+form .register-link {
+    margin-top: 20px;
+    color: #4a4a4a;
+    font-size: 14px;
+}
+
+.register-link p a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+.input-box input:focus+.icon,
+.input-box input:not(:placeholder-shown)+.icon {
+    display: none;
+    /* Hide the icon when input is focused or has content */
 }
