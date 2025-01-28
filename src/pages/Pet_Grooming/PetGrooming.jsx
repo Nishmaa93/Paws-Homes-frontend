@@ -1,7 +1,8 @@
 import React from 'react';
-import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
 import './PetGrooming.css';
+import { Link } from 'react-router-dom';
 
 // Import images
 import Step1 from '../../assets/image1.png';
@@ -26,9 +27,9 @@ const PetGrooming = () => {
         <header className="text-center py-4">
           <h1>Pet Grooming</h1>
           <p>
-          Pamper your furry friend with professional pet grooming! From shiny coats to trimmed nails, we ensure your pets look and feel their best. <br />
-            
-          Because every adopted pet deserves a fresh start!
+            Pamper your furry friend with professional pet grooming! From shiny coats to trimmed nails, we ensure your pets look and feel their best. <br />
+
+            Because every adopted pet deserves a fresh start!
           </p>
         </header>
 
@@ -50,15 +51,21 @@ const PetGrooming = () => {
         <section className="schedule-grooming py-4">
           <h2 className="text-center">Schedule Grooming</h2>
           <div className="schedule-grooming-content d-flex align-items-center justify-content-between">
-            <p>Every adopted pet deserves a fresh start, and grooming plays a big part in that journey! <br/>
-            Our grooming services are tailored to ensure your new furry friend is clean, healthy, and comfortable in their new home. <br/>
-            From soothing baths to de-shedding, nail trims, and coat styling, we make sure your pet feels loved and cared for.<br/>
-            A well-groomed pet is a happy pet, ready to shower you with unconditional love!</p>
+            <p>Every adopted pet deserves a fresh start, and grooming plays a big part in that journey! <br />
+              Our grooming services are tailored to ensure your new furry friend is clean, healthy, and comfortable in their new home. <br />
+              From soothing baths to de-shedding, nail trims, and coat styling, we make sure your pet feels loved and cared for.<br />
+              A well-groomed pet is a happy pet, ready to shower you with unconditional love!</p>
             <img src={GroomingImage} alt="Grooming Illustration" />
           </div>
-          <div className="text-center mt-4">
+          {/* <div className="text-center mt-4">
             <button className="btn btn-primary">Book an Appointment</button>
+          </div> */}
+          <div className="text-center mt-4">
+            <Link to="/application-form">
+              <button className="btn btn-primary">Book an Appointment</button>
+            </Link>
           </div>
+
         </section>
         {/* Divider */}
         <div className="divider"></div>

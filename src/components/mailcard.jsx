@@ -9,7 +9,7 @@ export const AcceptedCard = ({ application, onNext }) => (
       <div className="flex justify-end">
         <button
           onClick={onNext}
-          className="bg-brown-600 text-white px-4 py-2 rounded hover:bg-brown-700 transition-colors"
+           className="bg-[#E0D082] text-black px-4 py-2 rounded hover:bg-[#d4c074] transition-colors"
         >
           Next&gt;
         </button>

@@ -31,6 +31,7 @@ import ProfilePage from './pages/profile/Profile';
 import Register from './pages/register/Register';
 import SearchComponent from './pages/search/Search';
 import HelpPage from './pages/help/HelpPage';
+import ApplicationForm from './pages/applicationform/ApplicationForm'; //yo haleko
 
 
 
@@ -60,6 +61,7 @@ function App() {
         <Route path="/pet-grooming" element={<PetGrooming />} /> {/* Add the Pet Grooming route */}
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/help" element={<HelpPage />} />
+        <Route path="/application-form" element={<ApplicationForm />} /> //yo haleko
 
 
 
