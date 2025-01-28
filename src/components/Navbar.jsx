@@ -167,18 +167,18 @@
 
 // Navbar.jsx
 import React from 'react';
-import { FaHome, FaPaw, FaShower, FaEnvelope, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaEnvelope, FaHome, FaPaw, FaShower, FaSignOutAlt, FaUser } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import officiallogo from "../assets/logo1-removebg-preview.png";
 import './navbar.css';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <>
       <nav className="navbar fixed-top p-2 d-flex align-items-center" style={{ backgroundColor: '#f7e7a3' }}>
         <div className="container-fluid d-flex justify-content-between align-items-center">
-           {/* Logo */}
-           <Link to="/dashboard" className="d-flex align-items-center">
+          {/* Logo */}
+          <Link to="/dashboard" className="d-flex align-items-center">
             <img src={officiallogo} alt="Logo" width="50" height="40" className="me-3" />
             <span className="navbar-brand">Paws & Homes</span>
           </Link>
@@ -255,7 +255,7 @@ const Navbar = () => {
                   <FaSignOutAlt className="me-2" />
                   <span>Logout</span>
                 </Link>
-                
+
 
               </li>
             </ul>

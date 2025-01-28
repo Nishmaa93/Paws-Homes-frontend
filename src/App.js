@@ -30,6 +30,7 @@ import PetGrooming from './pages/Pet_Grooming/PetGrooming'; // Import your Pet G
 import ProfilePage from './pages/profile/Profile';
 import Register from './pages/register/Register';
 import SearchComponent from './pages/search/Search';
+import HelpPage from './pages/help/HelpPage';
 
 
 
@@ -58,6 +59,7 @@ function App() {
         <Route path='/update_application/:id' element={<UpdateApplication />} />
         <Route path="/pet-grooming" element={<PetGrooming />} /> {/* Add the Pet Grooming route */}
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/help" element={<HelpPage />} />
 
 
 
@@ -75,3 +77,4 @@ function App() {
 }
 
 export default App;
+

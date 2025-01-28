@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { pagination, searchListingsApi } from '../../apis/Api';
 import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 const CategoryPets = () => {
   const navigate = useNavigate();
@@ -132,20 +133,20 @@ const CategoryPets = () => {
         {isLoading ? (
           <p className="text-center">Loading...</p>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-6 gap-7">
             {pets.map(pet => (
-              <div key={pet._id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div key={pet._id} className="bg-white rounded-lg shadow-md overflow-hidden">
                 <img
                   src={`http://localhost:5500/listings/${pet.petImage}`}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-40 object-contain"
                   alt={pet.petName}
                 />
-                <div className="p-4">
-                  <h5 className="text-lg font-semibold text-black">{pet.petName}</h5>
-                  <p className="text-sm text-black">{pet.petType}</p>
+                <div className="p-2">
+                  <h5 className="text-m font-semibold text-black truncate">{pet.petName}</h5>
+                  <p className="text-m text-black">{pet.petType}</p>
                   <Link
                     to={`/pet_details/${pet._id}`}
-                    className="btn btn-custom bg-[#E0D082] text-black px-4 py-2 rounded-lg mt-2 block text-center"
+                    className="btn btn-custom bg-[#E0D082] text-black px-3 py-2 rounded-lg mt-2 block text-center text-xs"
                   >
                     Browse Now
                   </Link>
@@ -155,17 +156,19 @@ const CategoryPets = () => {
           </div>
         )}
         <div className="join mt-4 flex justify-center items-center">
-          <button className="join-item btn mx-2" onClick={() => setPageNumber(prev => Math.max(prev - 1, 1))}>
+          <button className="join-item btn mx-2 text-black" onClick={() => setPageNumber(prev => Math.max(prev - 1, 1))}>
             «
           </button>
-          <button className="join-item btn mx-2">Page {pageNumber}</button>
-          <button className="join-item btn mx-2" onClick={() => setPageNumber(prev => prev + 1)}>
+          <button className="join-item btn mx-2 text-black">Page {pageNumber}</button>
+          <button className="join-item btn mx-2 text-black" onClick={() => setPageNumber(prev => prev + 1)}>
             »
           </button>
         </div>
+        <Footer/>
       </div>
     </>
   );
 };
 
 export default CategoryPets;
+

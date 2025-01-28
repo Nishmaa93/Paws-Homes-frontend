@@ -19,17 +19,14 @@ const Dashboard = () => {
     useEffect(() => {
         getAllListings()
             .then(response => {
-                console.log('API response:', response.data);
                 if (response.data && Array.isArray(response.data.listings)) {
                     setPets(response.data.listings);
                 } else {
-                    console.error('Expected an array but got:', response.data);
                     toast.error('Unexpected response format from server.');
                 }
             })
             .catch(error => {
                 toast.error("Failed to fetch pet data");
-                console.error("There was an error fetching the pet data!", error);
             });
     }, []);
 
@@ -39,7 +36,7 @@ const Dashboard = () => {
             <div className="dashboard-body">
                 <main className="container-fluid p-0">
                     <div className="hero-section mb-6">
-                        <h1 className='Heading-text'>Where paws meets home and forever begins</h1>
+                        <h1 className='Heading-text'>Where paws meet home and forever begins</h1>
                         <div className="search-section mb-4">
                             <div className="input-group custom-input-group">
                                 <input type="text" className="form-control custom-search-input" placeholder="Search Breed, Size etc.." />
@@ -67,18 +64,18 @@ const Dashboard = () => {
 
                     <div className="pets-section container">
                         <h2 className="text-center Heading-text">Pets Available for Adoption</h2>
-                        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-4">
-                            {pets.slice(0, 4).map(pet => (
-                                <div key={pet.id} className="col mb-4">
-                                    <div className="card h-100 custom-card">
+                        <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3 mt-4">
+                            {pets.slice(0, 8).map(pet => (
+                                <div key={pet.id} className="col">
+                                    <div className="card custom-card h-100">
                                         <img 
                                             src={`http://localhost:5500/listings/${pet.petImage}`} 
-                                            className="card-img-top custom-card-img" 
+                                            className="custom-card-img" 
                                             alt={pet.petName} 
                                         />
-                                        <div className="card-body">
+                                        <div className="card-body text-center">
                                             <h5 className="card-title">{pet.petName}</h5>
-                                            <p className="card-text">{pet.petType}</p>
+                                            <p className="card-text text-muted">{pet.petType}</p>
                                             <Link
                                                 to={`/pet_details/${pet._id}`}
                                                 className="btn btn-custom"

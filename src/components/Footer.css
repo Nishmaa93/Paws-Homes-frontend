@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
   background-color: #E0D082;
   padding: 20px 0;
   font-family: 'Arial', sans-serif;
@@ -45,4 +45,95 @@
 
 .footer-link:hover {
   text-decoration: underline;
+} */
+
+/* Footer Container */
+.footer {
+  background-color: #E0D082;
+  color: black;
 }
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+}
+
+/* Section Styling */
+.footer-section {
+  flex: 1;
+  margin-bottom: 20px;
+  min-width: 200px;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: black;
+}
+
+/* Links Styling */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-link {
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #d4c074;
+}
+
+.footer-icon {
+  margin-right: 8px;
+  font-size: 1rem;
+  color: black; /* Default icon color is black */
+  transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #d4c074; /* Hover effect for icons */
+}
+
+/* Contact Text */
+.footer-text {
+  font-size: 1rem;
+  color: black;
+}
+
+/* Social Media Icons */
+.footer-socials a {
+  color: black; /* Default black color for social media icons */
+  font-size: 1.2rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #d4c074; /* Hover color for social media icons */
+  transform: scale(1.1); /* Slight scale effect */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: #E0D082;
+  color: black;
+}
+
+.footer-bottom .footer-text {
+  font-size: 0.875rem;
+  color: black;
+}
+

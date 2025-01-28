@@ -97,11 +97,10 @@ header {
   font-size: 1.5rem; /* Adjust icon size */
 }
 
-/* Custom styles for the cards */
 .pets-section .custom-card {
-  width: 16rem; /* Adjust the width */
-  height: 20rem; /* Adjust the height */
-  overflow: hidden; /* Ensure content stays within the card */
+  width: 100%; /* Smaller card width */
+  height: 16rem; /* Smaller card height */
+  overflow: hidden;
   background-color: #fff !important; /* Set white background color */
   color: #000 !important; /* Set text color to black */
   border: 1px solid #93785b97; /* Add a border */
@@ -111,7 +110,7 @@ header {
 }
 
 .custom-card:hover {
-  background-color: #f9f9f9; /* Change background color on hover */
+  background-color: #fff; /* Change background color on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
 }
 
@@ -171,15 +170,15 @@ header {
 }
 
 .pets-section .custom-card-img {
-  width: 200px; /* Adjust width */
-  height: 200px; /* Adjust height */
-  object-fit: cover; /* Maintain aspect ratio */
-  border-radius: 10px; /* Optional: Add rounded corners */
-  margin: 0 auto; /* Center the image */
-  display: block; /* Ensure centering works */
+  width: 100%; /* Full width of the card */
+  height: 10rem; /* Set a fixed height */
+  object-fit: contain; /* Ensure the image fits fully without being cropped */
+  background-color: #fff; /* Add a neutral background for images with transparency */
+  border-radius: 10px 10px 0 0; /* Optional: Rounded corners */
 }
 
+
 .pets-section .row {
-  justify-content: center; /* Ensure the cards are centered */
-  gap: 20px; /* Add space between cards for better alignment */
+  justify-content: center;
+  gap: 20px;
 }
