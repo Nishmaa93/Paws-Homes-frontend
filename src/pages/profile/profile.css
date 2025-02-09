@@ -16,11 +16,13 @@
     margin-bottom: 10px;
 }
 
-/* Profile Info (Phone and Email) Side by Side */
+/* Ensure phone number and email are always stacked vertically */
 .profile-info-container {
-    display: flex;
-    flex-direction: column; /* Default to column for smaller screens */
-    gap: 10px;
+  display: flex;
+  flex-direction: column !important; /* Ensure it stays column */
+  align-items: center; /* Center the content */
+  gap: 5px; /* Reduce gap for better spacing */
+  width: 100%; /* Full width for proper alignment */
 }
 
 @media (min-width: 768px) {
@@ -31,12 +33,14 @@
     }
 }
 
-/* Shared Styles for Phone and Email */
+/* Profile info should be centered */
 .profile-info {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    color: black;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: black;
+  width: 100%;
+  justify-content: center; /* Ensures alignment in center */
 }
 
 .profile-info .icon {

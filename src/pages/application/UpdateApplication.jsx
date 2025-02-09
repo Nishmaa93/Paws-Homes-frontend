@@ -33,7 +33,13 @@ const UpdateApplication = () => {
       setIsFetching(true)
       try {
         const response = await getSingleApplicationApi(id);
-        setFormData(response.data);
+        // setFormData(response.data);
+         // Ensure all fields are loaded properly, including converting `age` to a string
+         setFormData(prevState => ({
+          ...prevState,
+          ...response.data,
+          age: response.data.age ? String(response.data.age) : "" 
+        }));
       } catch (error) {
         console.error("Error fetching application data:", error);
         // Handle error (e.g., show error message or redirect)
@@ -49,15 +55,16 @@ const UpdateApplication = () => {
     const { name, value } = e.target
     setFormData(prevState => ({
       ...prevState,
-      [name]: value
-    }))
+      [name]: name === "age" ? String(value) : value // Ensure age is stored as a string
+    }));
     setErrors(prevErrors => ({ ...prevErrors, [name]: '' }))
   }
 
   const validate = () => {
     let tempErrors = {}
     if (!formData.name.trim()) tempErrors.name = 'Name is required'
-    if (!formData.age.trim()) tempErrors.age = 'Age is required'
+    // if (!formData.age.trim()) tempErrors.age = 'Age is required'
+    if (!String(formData.age || "").trim()) tempErrors.age = 'Age is required'; // Ensure age is validated as a string
     if (!formData.address.trim()) tempErrors.address = 'Address is required'
     if (!formData.email.trim()) tempErrors.email = 'Email is required'
     if (!formData.phonenumber.trim()) tempErrors.phonenumber = 'Phone number is required'
@@ -74,8 +81,12 @@ const UpdateApplication = () => {
     if (validate()) {
       setIsLoading(true)
       try {
-        await updateApplicationApi(id, formData)
-        navigate('/applications') // Adjust this path as needed
+        // await updateApplicationApi(id, formData)
+        await updateApplicationApi(id, {
+          ...formData,
+          age: String(formData.age) // Ensure age is passed as a string
+        });
+        navigate('/profile/profile') // Adjust this path as needed
       } catch (error) {
         console.error("Error updating application:", error)
         // Handle error (e.g., show error message)

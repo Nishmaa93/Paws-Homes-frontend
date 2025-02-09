@@ -32,6 +32,7 @@ import Register from './pages/register/Register';
 import SearchComponent from './pages/search/Search';
 import HelpPage from './pages/help/HelpPage';
 import ApplicationForm from './pages/applicationform/ApplicationForm'; //yo haleko
+import EditProfile from './pages/EditProfile/EditProfile';
 
 
 
@@ -62,6 +63,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/application-form" element={<ApplicationForm />} /> //yo haleko
+        <Route path="/edit-profile" element={<EditProfile />} />
 
 
 

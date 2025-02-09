@@ -334,14 +334,198 @@
 // export default ProfilePage;
 
 
+// import React, { useEffect, useState } from 'react';
+// import { FaCamera, FaCheck, FaEdit, FaEnvelope, FaPhone } from 'react-icons/fa';
+// import { toast } from 'react-toastify';
+// import { deleteApplicationApi, getUserApplicationApi, getoneListing } from '../../apis/Api';
+// import Footer from '../../components/Footer';
+// import Navbar from '../../components/Navbar';
+// import ApplicationCard from '../../components/applicationcards';
+// import './profile.css';
+// import { useNavigate } from "react-router-dom";
+
+// const ProfilePage = () => {
+//   const [applications, setApplications] = useState([]);
+//   const [isLoading, setIsLoading] = useState(true);
+//   const [error, setError] = useState(null);
+//   const [isEditing, setIsEditing] = useState(false);
+//   const [applicationsWithPetDetails, setApplicationsWithPetDetails] = useState([]);
+//   const [profileImage, setProfileImage] = useState(localStorage.getItem('profileImage') || null);
+//   const navigate = useNavigate(); // Initialize navigation
+
+//   const storedUser = JSON.parse(localStorage.getItem('user'));
+
+//   useEffect(() => {
+//     const fetchUserAndApplications = async () => {
+//       try {
+//         const response = await getUserApplicationApi(storedUser._id);
+//         setApplications(response.data.applications);
+//         setIsLoading(false);
+//       } catch (err) {
+//         console.error('Error fetching data:', err);
+//         setError(err.message);
+//         setIsLoading(false);
+//       }
+//     };
+//     fetchUserAndApplications();
+//   }, []);
+
+//   useEffect(() => {
+//     const fetchPetDetails = async () => {
+//       try {
+//         const updatedApplications = await Promise.all(
+//           applications.map(async (application) => {
+//             try {
+//               const petResponse = await getoneListing(application.petId);
+//               return {
+//                 ...application,
+//                 petImage: petResponse.data.petImage,
+//                 petName: petResponse.data.petName,
+//               };
+//             } catch (error) {
+//               console.error('Error fetching pet details:', error);
+//               return application;
+//             }
+//           })
+//         );
+//         setApplicationsWithPetDetails(updatedApplications);
+//       } catch (error) {
+//         console.error('Error in fetchPetDetails:', error);
+//       }
+//     };
+
+//     if (applications.length > 0) {
+//       fetchPetDetails();
+//     }
+//   }, [applications]);
+
+//   const handleEdit = () => setIsEditing(!isEditing);
+//   const handleSave = () => {
+//     setIsEditing(false);
+//   };
+
+//   const handleDeleteApplication = async (applicationId) => {
+//     try {
+//       await deleteApplicationApi(applicationId);
+//       setApplicationsWithPetDetails((prevApplications) =>
+//         prevApplications.filter((app) => app._id !== applicationId)
+//       );
+//       toast.success('Application cancelled successfully');
+//     } catch (error) {
+//       console.error('Error deleting application:', error);
+//       toast.error('Failed to cancel application');
+//     }
+//   };
+
+//   const handleImageUpload = (event) => {
+//     const file = event.target.files[0];
+//     if (file) {
+//       const reader = new FileReader();
+//       reader.onload = () => {
+//         const imageUrl = reader.result;
+//         setProfileImage(imageUrl);
+//         localStorage.setItem('profileImage', imageUrl); // Store image in localStorage
+//       };
+//       reader.readAsDataURL(file);
+//     }
+//   };
+
+//   return (
+//     <>
+//       <Navbar />
+//       <div className="profile-page-container">
+//         {/* Profile Section */}
+//         <div className="profile-section">
+//           <div className="profile-card">
+//             <div className="profile-image-container">
+//               <img
+//                 src={profileImage || "https://via.placeholder.com/120"}
+//                 alt="Profile"
+//                 className="profile-image"
+//               />
+//               <label className="upload-icon">
+//                 <FaCamera className="camera-icon" />
+//                 <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
+//               </label>
+//             </div>
+
+//             <div className="profile-details">
+//               <h1 className="profile-name">
+//                 {isEditing ? (
+//                   <input
+//                     type="text"
+//                     value={storedUser.fullname}
+//                     className="profile-input"
+//                   />
+//                 ) : (
+//                   storedUser.fullname
+//                 )}
+//               </h1>
+
+//               <div className="profile-info-container">
+//                 {/* Phone Number */}
+//                 <p className="profile-info">
+//                   <FaPhone className="icon" />
+//                   {isEditing ? (
+//                     <input type="tel" value={storedUser.phonenumber} className="profile-input" />
+//                   ) : (
+//                     storedUser.phonenumber
+//                   )}
+//                 </p>
+
+//                 {/* Email */}
+//                 <p className="profile-info">
+//                   <FaEnvelope className="icon" />
+//                   {isEditing ? (
+//                     <input type="email" value={storedUser.email} className="profile-input" />
+//                   ) : (
+//                     storedUser.email
+//                   )}
+//                 </p>
+//               </div>
+
+//               <button onClick={isEditing ? handleSave : handleEdit} className="edit-button">
+//                 {isEditing ? <FaCheck className="icon" /> : <FaEdit className="icon" />}
+//                 {isEditing ? "Save Profile" : "Edit Profile"}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Applications Section */}
+//         <div className="applications-container">
+//           <h2 className="applications-title">Your Applications</h2>
+//           <div className="applications-grid">
+//             {isLoading ? (
+//               <p className="loading-text">Loading applications...</p>
+//             ) : error ? (
+//               <p className="error-text">{error}</p>
+//             ) : applicationsWithPetDetails.length === 0 ? (
+//               <p className="no-applications">No applications found.</p>
+//             ) : (
+//               applicationsWithPetDetails.map((app) => (
+//                 <ApplicationCard key={app._id} app={app} onDelete={handleDeleteApplication} />
+//               ))
+//             )}
+//           </div>
+//         </div>
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default ProfilePage;
+
 import React, { useEffect, useState } from 'react';
 import { FaCamera, FaCheck, FaEdit, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { deleteApplicationApi, getUserApplicationApi, getoneListing } from '../../apis/Api';
-import Footer from '../../components/Footer'; // Import Footer component
+import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import ApplicationCard from '../../components/applicationcards';
-import './profile.css'; // Import the new CSS file
+import './profile.css';
+import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
   const [applications, setApplications] = useState([]);
@@ -349,7 +533,8 @@ const ProfilePage = () => {
   const [error, setError] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [applicationsWithPetDetails, setApplicationsWithPetDetails] = useState([]);
-  const [profileImage, setProfileImage] = useState(null);
+  const [profileImage, setProfileImage] = useState(localStorage.getItem('profileImage') || null);
+  const navigate = useNavigate(); // Initialize navigation
 
   const storedUser = JSON.parse(localStorage.getItem('user'));
 
@@ -397,30 +582,14 @@ const ProfilePage = () => {
     }
   }, [applications]);
 
-  const handleEdit = () => setIsEditing(!isEditing);
-  const handleSave = () => {
-    setIsEditing(false);
-  };
-
-  const handleDeleteApplication = async (applicationId) => {
-    try {
-      await deleteApplicationApi(applicationId);
-      setApplicationsWithPetDetails((prevApplications) =>
-        prevApplications.filter((app) => app._id !== applicationId)
-      );
-      toast.success('Application cancelled successfully');
-    } catch (error) {
-      console.error('Error deleting application:', error);
-      toast.error('Failed to cancel application');
-    }
-  };
-
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
-        setProfileImage(reader.result);
+        const imageUrl = reader.result;
+        setProfileImage(imageUrl);
+        localStorage.setItem('profileImage', imageUrl); // Store image in localStorage
       };
       reader.readAsDataURL(file);
     }
@@ -430,7 +599,6 @@ const ProfilePage = () => {
     <>
       <Navbar />
       <div className="profile-page-container">
-        {/* Profile Section - Centered */}
         <div className="profile-section">
           <div className="profile-card">
             <div className="profile-image-container">
@@ -445,51 +613,26 @@ const ProfilePage = () => {
               </label>
             </div>
 
-
             <div className="profile-details">
-    <h1 className="profile-name">
-        {isEditing ? (
-            <input
-                type="text"
-                value={storedUser.fullname}
-                className="profile-input"
-            />
-        ) : (
-            storedUser.fullname
-        )}
-    </h1>
+              <h1 className="profile-name">{storedUser.fullname}</h1>
 
-    <div className="profile-info-container">
-        {/* Phone Number */}
-        <p className="profile-info">
-            <FaPhone className="icon" />
-            {isEditing ? (
-                <input type="tel" value={storedUser.phonenumber} className="profile-input" />
-            ) : (
-                storedUser.phonenumber
-            )}
-        </p>
+              <div className="profile-info-container">
+                <p className="profile-info">
+                  <FaPhone className="icon" /> {storedUser.phonenumber}
+                </p>
+                <p className="profile-info">
+                  <FaEnvelope className="icon" /> {storedUser.email}
+                </p>
+              </div>
 
-        {/* Email */}
-        <p className="profile-info">
-            <FaEnvelope className="icon" />
-            {isEditing ? (
-                <input type="email" value={storedUser.email} className="profile-input" />
-            ) : (
-                storedUser.email
-            )}
-        </p>
-    </div>
-
-    <button onClick={isEditing ? handleSave : handleEdit} className="edit-button">
-        {isEditing ? <FaCheck className="icon" /> : <FaEdit className="icon" />}
-        {isEditing ? "Save Profile" : "Edit Profile"}
-    </button>
-</div>
+              {/* New Edit Profile Button (Navigates to Edit Profile Page) */}
+              <button onClick={() => navigate("/edit-profile")} className="edit-button">
+                <FaEdit className="icon" /> Edit Profile
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Applications Section - Aligned Left */}
         <div className="applications-container">
           <h2 className="applications-title">Your Applications</h2>
           <div className="applications-grid">
@@ -501,7 +644,7 @@ const ProfilePage = () => {
               <p className="no-applications">No applications found.</p>
             ) : (
               applicationsWithPetDetails.map((app) => (
-                <ApplicationCard key={app._id} app={app} onDelete={handleDeleteApplication} />
+                <ApplicationCard key={app._id} app={app} />
               ))
             )}
           </div>

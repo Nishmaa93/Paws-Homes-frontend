@@ -1,0 +1,105 @@
+/* Edit Profile Page Styling */
+.edit-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E0D082;
+    min-height: 100vh;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Back Button */
+.back-button {
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+/* Edit Profile Card */
+.edit-profile-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+/* Profile Image */
+.profile-image-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #E0D082;
+}
+
+/* Camera Icon */
+.upload-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #E0D082;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.camera-icon {
+    font-size: 16px;
+    color: black;
+}
+
+/* Form Fields */
+.edit-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.edit-profile-form label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+
+.edit-profile-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Save Button */
+.save-button {
+    background: #E0D082;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
